@@ -11,7 +11,7 @@ Dil değişikliğini config.ini dosyasında aşağıdaki gibi yapabilirsiniz
 ```
 [parameters]
 ;You can change your language
-**lang=EN**
+lang=TR
 
 ;Hotkey for listening, Control + Alt + s is default. But you can pick up another key
 hotkey_listen=0x53
@@ -31,7 +31,7 @@ You can specify your language in config.ini as below
 ```
 [parameters]
 ;You can change your language
-**lang=EN**
+lang=EN
 
 ;Hotkey for listening, Control + Alt + s is default. But you can pick up another key
 hotkey_listen=0x53
