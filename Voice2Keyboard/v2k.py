@@ -4,7 +4,7 @@
 '''
 Created on 12 Ağu 2015
 
-@author: Sinan Cetinkaya sinancetinkaya35@gmail.com
+@author: Sinan Cetinkaya sinancetinkaya****@gmail.com
 '''
 
 import sys, os 
