@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #! python2
 '''
-Created on 12 Ağu 2015
+Created on 12 Agu 2015
 
 @author: Sinan Cetinkaya sinancetinkaya****@gmail.com
 '''
