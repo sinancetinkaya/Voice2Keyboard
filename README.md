@@ -8,7 +8,7 @@ Dinlediği bu sesi Google Ses Tanıma Motoruna gönderir ve geri dönen metni kl
 Programın çalışan halini Voice2Keyboard / [v2k.zip](Voice2Keyboard/v2k.zip) dosyasını indererek kullanabilirsiniz
 
 Dil değişikliğini config.ini dosyasında aşağıdaki gibi yapabilirsiniz 
-﻿```
+```
 [parameters]
 ;You can change your language
 **lang=EN**
