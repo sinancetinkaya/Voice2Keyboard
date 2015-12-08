@@ -20,7 +20,7 @@ hotkey_listen=0x53
 
 # Voice2Keyboard
 
-I wrote this program to help for those who have difficulties using a keyboard.
+I wrote this program to help those who have difficulties using a keyboard.
 
 Program records audio from microphone when the hotkeys are pressed.
 Then sends the audio to the Google Speech Recognition Engine and gets back the text. 
