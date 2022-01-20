@@ -43,15 +43,16 @@ class Voice2Keyboard:
         self.hook.handler = self.on_event
         self.HOTKEY = {'Lwin', 'Z'}
         self.LANGUAGE = "tr-TR"
-        self.DEVICE_INDEX = None
         self.recognizer = speech_recognition.Recognizer()
-        self.list_devices()
         self.lock = False
+        self.list_devices()
 
     def list_devices(self):
-        log.info("if your microphone doesn't work, try the devices below")
         for index, name in enumerate(speech_recognition.Microphone.list_microphone_names()):
             log.info(f"device_index[{index}]='{name}'")
+
+        log.info("if microphone doesn't work, try to set DEVICE_INDEX to one the devices above")
+        self.DEVICE_INDEX = None
 
     def on_event(self, event):
         if not isinstance(event, KeyboardEvent) or event.event_type != 'key down' or self.lock:
@@ -63,9 +64,11 @@ class Voice2Keyboard:
 
         self.lock = True
 
+        log.info("listening...")
         with speech_recognition.Microphone(device_index=self.DEVICE_INDEX) as source:
             audio = self.recognizer.listen(source)
 
+        log.info("converting audio to text...")
         try:
             text = self.recognizer.recognize_google(
                 audio_data=audio,
@@ -74,7 +77,7 @@ class Voice2Keyboard:
                 key="AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw",
                 language=self.LANGUAGE
             )
-            log.info(f"Detected Text: '{text}'")
+            log.info(f"typing '{text}'")
             keyboard.send_keys(text, with_spaces=True)
         except:
             log.exception("")
@@ -83,11 +86,11 @@ class Voice2Keyboard:
             self.lock = False
 
     def listen(self):
-        log.info("listening...")
+        log.info(f"registering {self.HOTKEY} hotkey")
         self.hook.hook(keyboard=True, mouse=False)
 
     def exit(self):
-        log.info("stopping...")
+        log.info(f"unregistering hotkey")
         self.hook.unhook_keyboard()
 
 
