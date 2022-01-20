@@ -19,8 +19,6 @@ LOGS_DIRECTORY = os.path.join(APP_DIRECTORY, 'logs')
 if not os.path.exists(LOGS_DIRECTORY):
     os.makedirs(LOGS_DIRECTORY)
 
-CONFIG_FILE = APP_DIRECTORY + r'\config.ini'
-
 log_file_handler = TimedRotatingFileHandler(
     os.path.join(LOGS_DIRECTORY, f"{Path(__file__).stem}.log"),
     when="midnight",
